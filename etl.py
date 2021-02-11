@@ -158,7 +158,7 @@ mysql_many_query(
 for i, row in raw_recipes[['id', 'ingredients']].iterrows():
     mysql_many_query(
         """
-        INSERT INTO recipe_ingredients
+        INSERT INTO recipes_ingredients
         (fk_recipe_id, fk_ingredient_id)
         VALUES ( %s, ( SELECT pk_ingredient_id FROM ingredients WHERE UPPER(name) = UPPER(%s) ) )
         """,
