@@ -4,14 +4,14 @@ USE food_com;
 -- I suppose this data is used to fed a recommendation engine
 
 CREATE TABLE users (
-    pk_user_id INT,
+    pk_user_id INT AUTO_INCREMENT,
     -- Techniques are consulted with user ratings ?
     -- ratings OK
     PRIMARY KEY (pk_user_id)
 );
 
 CREATE TABLE recipes (
-    pk_recipe_id INT,
+    pk_recipe_id INT AUTO_INCREMENT,
     name VARCHAR(100),
     minutes INT,
     fk_contributor INT,
@@ -50,7 +50,7 @@ CREATE TABLE ratings (
 );
 
 CREATE TABLE tags (
-    pk_tag_id INT,
+    pk_tag_id INT AUTO_INCREMENT,
     name VARCHAR(100),
     PRIMARY KEY (pk_tag_id),
     UNIQUE INDEX ( (UPPER(name)) )
@@ -64,7 +64,7 @@ CREATE TABLE recipe_tags (
 );
 
 CREATE TABLE techniques (
-    pk_technique_id INT,
+    pk_technique_id INT AUTO_INCREMENT,
     PRIMARY KEY (pk_technique_id)
 );
 
